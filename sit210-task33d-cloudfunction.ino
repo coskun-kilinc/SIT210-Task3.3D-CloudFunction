@@ -17,14 +17,15 @@ void setup() {
 
 void readEvent(const char *event, const char *data)
 {
+    String sData = String::format(event) + " " + String::format(data);
     if (strcmp(data, "wave") == 0 ) 
     {
-        writeEvent(String::format(event));
+        writeEvent("Event_Recognised", String::format(sData));
         doBlink(3, 200);
     }
     else if (strcmp(data, "pat") == 0 )
     {
-        writeEvent(String::format(event));
+        writeEvent("Event_Recognised", String::format(sData));
         doBlink(8, 100);
     }
 }
